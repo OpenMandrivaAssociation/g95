@@ -32,7 +32,6 @@ Patch0:		g95-buildroot.patch
 Patch1:		g95-f951-coexist.patch
 Patch2:		g95-gcclibdir.patch
 Patch3:		g95-g95libdir.patch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildRequires:	binutils >= %{binutils_version}
 BuildRequires:	bison
 BuildRequires:	flex
