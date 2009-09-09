@@ -12,7 +12,7 @@
 %define target_prefix		%{_prefix}
 %define target_libdir		%{_libdir}
 %define target_slibdir		/%{_lib}
-%define	rel			%mkrel 3
+%define	rel			%mkrel 4
 
 # Use system gcc compiler?
 %define use_syscomp		0
