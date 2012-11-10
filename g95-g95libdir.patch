@@ -1,0 +1,36 @@
+--- g95/g95-0.91/configure.in.g95libdir	2005-12-18 00:19:39.000000000 +0100
++++ g95/g95-0.91/configure.in	2006-01-11 17:19:00.000000000 +0100
+@@ -41,7 +41,7 @@
+ 
+    gcc_version=`echo ${gcc_version_full} | sed -e 's/\(@<:@^ @:>@*\) .*/\1/'`
+ 
+-   DEST_LIBDIR=$prefix/lib/gcc-lib/$host/$gcc_version
++   DEST_LIBDIR=$prefix/lib/g95/$host/$gcc_version
+    SAVE_DIR=`pwd`
+    PREFIX=$prefix
+ 
+--- g95/gcc-4_0-branch/gcc/Makefile.in.g95libdir	2006-01-11 13:20:50.000000000 +0100
++++ g95/gcc-4_0-branch/gcc/Makefile.in	2006-01-11 17:36:34.000000000 +0100
+@@ -451,9 +451,9 @@
+ # --------
+ 
+ # Directory in which the compiler finds libraries etc.
+-libsubdir = $(libdir)/gcc/$(target_noncanonical)/$(version)
++libsubdir = $(libdir)/g95/$(target_noncanonical)/$(version)
+ # Directory in which the compiler finds executables
+-libexecsubdir = $(libexecdir)/gcc/$(target_noncanonical)/$(version)
++libexecsubdir = $(libexecdir)/g95/$(target_noncanonical)/$(version)
+ # Used to produce a relative $(gcc_tooldir) in gcc.o
+ unlibsubdir = ../../..
+ # Directory in which to find other cross-compilation tools and headers.
+@@ -1476,8 +1476,8 @@
+ 
+ DRIVER_DEFINES = \
+   -DSTANDARD_STARTFILE_PREFIX=\"$(unlibsubdir)/\" \
+-  -DSTANDARD_EXEC_PREFIX=\"$(libdir)/gcc/\" \
+-  -DSTANDARD_LIBEXEC_PREFIX=\"$(libexecdir)/gcc/\" \
++  -DSTANDARD_EXEC_PREFIX=\"$(libdir)/g95/\" \
++  -DSTANDARD_LIBEXEC_PREFIX=\"$(libexecdir)/95/\" \
+   -DDEFAULT_TARGET_VERSION=\"$(version)\" \
+   -DDEFAULT_TARGET_MACHINE=\"$(target_noncanonical)\" \
+   -DSTANDARD_BINDIR_PREFIX=\"$(bindir)/\" \

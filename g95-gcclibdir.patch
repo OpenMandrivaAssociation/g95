@@ -1,0 +1,11 @@
+--- g95/g95-0.91/configure.in.gcclibdir	2005-11-06 14:18:56.000000000 +0100
++++ g95/g95-0.91/configure.in	2005-11-06 14:18:56.000000000 +0100
+@@ -41,7 +41,7 @@
+ 
+    gcc_version=`echo ${gcc_version_full} | sed -e 's/\(@<:@^ @:>@*\) .*/\1/'`
+ 
+-   DEST_LIBDIR=$prefix/lib/gcc-lib/$host/$gcc_version
++   DEST_LIBDIR=$prefix/lib/gcc/$host/$gcc_version
+    SAVE_DIR=`pwd`
+    PREFIX=$prefix
+ 

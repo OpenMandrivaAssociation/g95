@@ -1,0 +1,47 @@
+--- g95/g95-0.91/specs.h.g951	2005-07-19 04:26:41.000000000 +0200
++++ g95/g95-0.91/specs.h	2005-11-06 12:25:36.000000000 +0100
+@@ -6,7 +6,7 @@
+ 
+ /* spec for options when invoking f951 */
+ 
+-#define F951_OPTIONS "f951 %i %(cc1_options) " G95_SPEC " %{E} %{cpp} \
++#define F951_OPTIONS "g951 %i %(cc1_options) " G95_SPEC " %{E} %{cpp} \
+      %{no-cpp} %{bundle} %{I*} %{M} %{r8} %{D*} %{U*} %{i8} %{i4} \
+      %{!fsyntax-only:%{!E:%(invoke_as)}}"
+ 
+--- g95/g95-0.91/Makefile.am.g951	2005-11-06 12:02:54.000000000 +0100
++++ g95/g95-0.91/Makefile.am	2005-11-06 12:26:18.000000000 +0100
+@@ -3,10 +3,10 @@
+ 
+ bin_PROGRAMS = g95
+ 
+-extra_PROGRAMS = f951
++extra_PROGRAMS = g951
+ extradir = @DEST_LIBDIR@
+ 
+-f951_SOURCES = arith.c array.c bbt.c bigint.c bigreal.c check.c		\
++g951_SOURCES = arith.c array.c bbt.c bigint.c bigreal.c check.c		\
+ convert.c data.c decl.c entry.c error.c expr.c f95-lang.c forall.c	\
+ format.c g95.h g95-support.h ggc-page.c imodule.c interface.c		\
+ intrinsic.c intrinsic.h io.c iresolve.c kinds.c lang-options.c match.c	\
+@@ -15,9 +15,9 @@
+ trans-array.c trans-decl.c trans-intrinsic.c trans-stmt.c trans.c	\
+ trans-common.c trans-const.c trans-expr.c trans-io.c trans-types.c
+ 
+-f951_CFLAGS =
++g951_CFLAGS =
+ 
+-f951_LDADD = @GCC_DIR@/g95/gcc/main.o @GCC_DIR@/g95/gcc/libbackend.a	\
++g951_LDADD = @GCC_DIR@/g95/gcc/main.o @GCC_DIR@/g95/gcc/libbackend.a	\
+              @GCC_DIR@/g95/libcpp/libcpp.a				\
+ 	     @GCC_DIR@/g95/libiberty/libiberty.a			\
+              options.o opts.o version.o @LDADD0@
+@@ -84,7 +84,7 @@
+ 
+ 
+ install-data-hook:
+-	-ln -sf f951 $(DESTDIR)@DEST_LIBDIR@/cc1
++	-ln -sf g951 $(DESTDIR)@DEST_LIBDIR@/cc1
+ 	if test "`uname`" = "Darwin" ; then \
+ 	  ar x $(DESTDIR)/usr/lib/libgcc.a darwin-fpsave.o ; \
+ 	  ar rs $(DESTDIR)@DEST_LIBDIR@/libgcc.a darwin-fpsave.o ; \
