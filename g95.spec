@@ -25,7 +25,7 @@ Version:	0.91
 Release:	1.%{snapshot}.%{rel}
 License:	GPL
 Group:		Development/Other
-Url:		http://www.g95.org
+Url:		https://www.g95.org
 Source0:	http://www.g95.org/g95_source.tar.bz2
 Source1:	gcc-%{gcc_version}.tar.bz2
 Patch0:		g95-buildroot.patch
